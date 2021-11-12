@@ -62,12 +62,12 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(array){
+  function animalNames(){
 
     const displayNames = [];
 
     zooAnimals.forEach(function(item){
-      return displayNames.push(`name: ${item.animal_name}, scientific name: ${item.scientific_name}`);
+      return displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
     });
     return displayNames;
   }
@@ -210,15 +210,28 @@ let cuboid = new CuboidMaker(0,4,5,5);
 console.log('task 14: working');
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-console.log(cuboid.volume()); // 100
-console.log(cuboid.surfaceArea()); // 130
+// console.log(cuboid.volume()); // 100
+// console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
+  constructor(attr) {
+      this.length = attr.length;
+      this.width = attr.width;
+      this.height = attr.height;
+    };
+    volume(){
+      return this.length * this.width * this.height;
+  }
+  surfaceArea(){
+    return 2* (this.length*this.width + this.length * this.height+ this.width *this.height);
+  };
+};
 
-}
+console.log('task 15: working');
+
 
 
 //🦄🦄🦄 Test your volume and surfaceArea methods by uncommenting the logs below: 🦄🦄🦄
