@@ -18,7 +18,7 @@ myFunction();
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
 
-// console.log('task 1: When we use nested functions the parent also known as the outer function passes down access to its elements to the inner function which is sometimes called child and the child to the grandchild which would be further nested functions. Here we see the child, nestedFunction, reaching up to its parent, myFunction, pulling down the variable internal. The act of the child pulling the variable defined in the parent is called closure.This is possible because it is contained within the parents block of code indicated by the "{}".');
+// console.log('task 1: When we use nested functions the parent also known as the outer function passes down access to its items to the inner function which is sometimes called child and the child to the grandchild which would be further nested functions. Here we see the child, nestedFunction, reaching up to its parent, myFunction, pulling down the variable internal. The act of the child pulling the variable defined in the parent is called closure.This is possible because it is contained within the parents block of code indicated by the "{}".');
 
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
@@ -29,10 +29,14 @@ myFunction();
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(number) {
-  for(let i = 0; i < number; i+[number])
-    return number+number*1.5;
-  };
- console.log('task 2: ', summation(4));
+  
+    let sum = 0;
+    for (let i = 1; i <= number; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+ console.log('task 2: ', summation(8));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -56,10 +60,16 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(array){
+
+    const displayNames = [];
+
+    zooAnimals.forEach(function(item){
+      return displayNames.push(`name: ${item.animal_name}, scientific name: ${item.scientific_name}`);
+    });
+    return displayNames;
   }
-  
+  console.log('task 3: ',animalNames());
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -67,20 +77,28 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(data){
+    const newNames = data.map(function(item){
+      return item.animal_name.toLowerCase();
+    })
+    return newNames;
   }
   
+console.log('task 4: ', lowerCaseNames(zooAnimals));
+
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(data){
+    const critPop = data.filter(function(item){
+      return item.population < 5;
+    });
+    return critPop;
   }
-  
+  console.log('task 5: ', lowPopulationAnimals(zooAnimals));
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
