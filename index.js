@@ -2,6 +2,8 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
+const { forInStatement } = require("@babel/types");
+
 const external = "I'm outside the function";
 
 function myFunction() {
@@ -69,7 +71,7 @@ const zooAnimals = [
     });
     return displayNames;
   }
-  console.log('task 3: ',animalNames());
+  console.log('task 3: ',animalNames(zooAnimals));
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -112,7 +114,7 @@ console.log('task 4: ', lowerCaseNames(zooAnimals));
     },0);
     return totPop;
   }
-  console.log('task 6: ', USApop(zooAnimals))
+  console.log('task 6:', USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
@@ -122,32 +124,37 @@ console.log('task 4: ', lowerCaseNames(zooAnimals));
     * The consume function should return the invocation of cb, passing a and b into cb as arguments
   */
 
-  function consume(/*Your Code Here */){
-    /*Your Code Here */
-  }
+  function consume(a,b,cb){
+    return cb(a,b);
+  };
  
-  
+  console.log('task 7: working')
+
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
+
  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
   
-function add(/*Your Code Here */){
-    /*Your Code Here*/
+function add(a,b){
+  return  a+b;
   }
 
+console.log('task 8: working')
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
   
-function multiply(/*Your Code Here */){
-   /*Your Code Here */
+function multiply(a,b){
+   return a*b;
   }
 
+console.log('task 9: working');
 
  // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
   
-function greeting(/*Your Code Here */){
-   return /*Your Code Here */
+function greeting(a,b){
+
+   return `Hello ${a} ${b}, nice to meet you!`
   }
-  
+  console.log('task 10: ', greeting("James", "Robertson"));
   
   // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
   // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
