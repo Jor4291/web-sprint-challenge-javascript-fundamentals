@@ -18,7 +18,7 @@ myFunction();
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
 
-
+// console.log('task 1: When we use nested functions the parent also known as the outer function passes down access to its elements to the inner function which is sometimes called child and the child to the grandchild which would be further nested functions. Here we see the child, nestedFunction, reaching up to its parent, myFunction, pulling down the variable internal. The act of the child pulling the variable defined in the parent is called closure.This is possible because it is contained within the parents block of code indicated by the "{}".');
 
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
@@ -28,11 +28,11 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
-  }
- 
+function summation(number) {
+  for(let i = 0; i < number; i+[number])
+    return number+number*1.5;
+  };
+ console.log('task 2: ', summation(4));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
